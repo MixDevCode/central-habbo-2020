@@ -1,0 +1,129 @@
+@charset 'utf-8';
+@import url('font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:300,300i,400,400i,500,500i,700,700i,900,900i');
+@font-face {
+    font-family: 'Habbfont';
+    src: url('../fonts/habbfont.html') format("woff2"),url('../fonts/habbfont.woff') format("woff");
+    unicode-range: U+007C,U+2020,U+2022,U+00B6,U+00B1,U+00A5,U+00B5,U+00AA,U+00BA,U+00AC,U+0192,U+00BB,U+2014,U+2018,U+2021
+}
+
+*.habbfont {font-family:'Habbfont', 'Titillium Web', sans-serif!important;}
+
+* {outline:none;z-index:1;box-sizing:border-box;padding:0;margin:0;text-decoration:none;list-style:none;font-family:'Titillium Web', sans-serif;color:#fff;letter-spacing:0.5px;}
+
+*::-webkit-scrollbar {width:5px;background:rgba(0,0,0,0.2);}
+*::-webkit-scrollbar-thumb {background:rgba(0,0,0,0.4);}
+
+* > .error:not(input) {background:#ce3c3c;padding-left:15px;line-height:50px;height:50px;margin-top:15px;}
+* > .error:not(input) > p {float:left;color:#fff;}
+* > .error:not(input) > a {float:right;background:rgba(0,0,0,0.2);padding:0 15px;}
+* > .error.littleScreen {text-align:center;left:0;right:0;position:fixed;margin-top:0;padding:15px 20px;z-index:150;display:none;overflow:hidden;}
+
+body {background:#ddd;}
+body.unscrollable {overflow:hidden;}
+
+body > .errorCache {display:none;position:fixed;z-index:999;background:rgba(0,0,0,0.5);top:0;right:0;left:0;bottom:0;}
+body > .errorCache > .box {position:absolute;width:400px;padding:10px;background:#fff;left:calc(50% - 400px/2);top:50%;transform:translate(0, -50%);box-shadow:0 0 5px rgba(0,0,0,0.3);}
+body > .errorCache > .box > .title {background:#ce3c3c;height:40px;padding:0 0 0 15px;line-height:40px;position:relative;}
+body > .errorCache > .box > .title:after {content:'';border:5px solid transparent;border-top-color:#ce3c3c;position:absolute;left:20px;bottom:-10px;}
+body > .errorCache.success > .box > .title {background:#3c9fce;}
+body > .errorCache.success > .box > .title:after {border-top-color:#3c9fce;}
+body > .errorCache > .box > .title > span {color:#fff;}
+body > .errorCache > .box > .title > i {float:right;line-height:40px;background:rgba(0,0,0,0.2);padding:0 15px;cursor:pointer;color:rgba(255,255,255,0.5);}
+body > .errorCache > .box > .content {float:left;background:#eee;padding:10px 15px;margin-top:10px;width:100%;}
+body > .errorCache > .box > .content > p {color:#666;}
+body > .errorCache > .box > .content > p > b {font-weight:600;color:#666}
+body > .errorCache > .box > .content > p > a {color:#666;font-weight:600;}
+
+body > .header {background:#acbfce;width:100%;}
+body > .header > .top {height:145px;background:url('../img/header.png') no-repeat center bottom;width:100%;position:relative;}
+body > .header > .top > .center {position:absolute;bottom:0;width:1000px;left:calc(50% - 1000px/2);height:145px;}
+body > .header > .top > .center > .logo {float:left;height:145px;line-height:145px;margin-right:17.5px;}
+body > .header > .top > .center > .logo > img {vertical-align:middle;}
+body > .header > .top > .center > .right {position:absolute;top:0;right:0;bottom:0;left:0;}
+body > .header > .top > .center > .right > form {position:absolute;bottom:25px;right:0;}
+body > .header > .top > .center > .right > form > input:not([type="submit"]) {border:none;padding:0 17.5px;line-height:40px;height:40px;margin-top:17.5px;float:left;width:330px;background:rgba(0,0,0,0.4);}
+body > .header > .top > .center > .right > form > input:not([type="submit"])::-webkit-input-placeholder {color:rgba(255,255,255,0.7);}
+body > .header > .top > .center > .right > form > input[type="submit"] {position:absolute;right:0;width:40px;height:40px;z-index:2;line-height:40px;background:none;border:none;cursor:pointer;top:17.5px;}
+body > .header > .top > .center > .right > form > i {position:absolute;right:0;line-height:40px;top:17.5px;width:40px;text-align:center;background:rgba(126,164,192,0.2);z-index:1;font-size:12px;}
+body > .header > .top > .center > .right > .users_online {position:absolute;right:0;margin-top:25px;background:#fff;height:40px;line-height:40px;color:#999;padding:0 15px;}
+body > .header > .top > .center > .right > .users_online.admin {right:151.5px;}
+body > .header > .top > .center > .right > .users_online > b {font-weight:600;color:#999;}
+body > .header > .top > .center > .right > a {float:right;background:#c6a835;margin-top:25px;padding:0 15px;height:40px;line-height:40px;}
+body > .header > .down {height:70px;background:#fff;}
+body > .header > .down > .center {width:1000px;margin:auto;}
+body > .header > .down > .center > li {float:left;position:relative;}
+body > .header > .down > .center > li > a {cursor:pointer;color:#666;font-size:15px;font-weight:600;text-transform:uppercase;line-height:70px;margin-right:25px;float:left;}
+body > .header > .down > .center > li > a > i {color:#666;}
+body > .header > .down > .center > li > a.slc {color:#4e7ea6;}
+body > .header > .down > .center > li > a.slc > i {color:#4e7ea6;}
+body > .header > .down > .center > li > ul {position:absolute;display:none;background:#fff;box-shadow:0 2px 2px rgba(0,0,0,0.2);top:70px;padding:0 4px 4px 4px;white-space:nowrap;min-width:150px;}
+body > .header > .down > .center > li:hover > ul {display:block;}
+body > .header > .down > .center > li > ul > li {float:left;clear:both;width:100%;}
+body > .header > .down > .center > li > ul > li > a {color:#4e7ea6;float:left;background:#e8f8fb;padding:8px 20px 8px 12px;width:100%;font-size:13px;}
+body > .header > .down > .center > li > ul > li:nth-child(2n+1) > a {background:#fff;}
+body > .header > .down > .center > li > ul > li > a:hover {background:#e2f0f3;}
+body > .header > .down > .center > li.right {float:right;}
+body > .header > .down > .center > li.right > a {margin-left:15px;margin-right:0;margin-top:15px;color:#fff;background:#4e7ea6;padding:0 15px;line-height:40px;height:40px;font-size:13px;}
+body > .header > .down > .center > li.right > a.log {background:#c63535;}
+body > .header > .down > .center > li.right > a.log > i {color:#fff;}
+
+body > .page {width:1000px;margin:auto;position:relative;z-index:0;}
+
+* > .mask {display:none;position:fixed;top:43%;right:0;bottom:0;left:0;z-index:200;margin:0;text-align:center;}
+* > .mask:after {content:'';position:fixed;z-index:-1;top:0;right:0;bottom:0;left:0;background:#3e3e3e;;opacity:0.9;}
+* > .mask:before {content:"";display:block;margin:0 auto 10px;text-align:center;width:34px;height:34px;border-left:8px solid #000;border-left:8px solid rgba(0,0,0,.2);border-right:8px solid #000;border-right:8px solid rgba(0,0,0,.2);border-bottom:8px solid #000;border-bottom:8px solid rgba(0,0,0,.2);border-top:8px solid #2180c0;border-radius:50px;-webkit-animation:rotation .7s infinite linear;-moz-animation:rotation .7s infinite linear;-o-animation:rotation .7s infinite linear;animation:rotation .7s infinite linear;}
+
+* > .footer.general {width:100%;float:left;margin-bottom:50px;margin-top:15px;}
+* > .footer.general > .center {width:1000px;margin:auto;background:#3e3e3e url('../img/cmsbyeklo.png') no-repeat right+10px center;height:84px;padding-right:75px;}
+* > .footer.general > .center > .logo {float:left;height:100%;background:rgba(0,0,0,0.1);padding:0 20px;line-height:84px;}
+* > .footer.general > .center > .logo > img {vertical-align:middle;}
+* > .footer.general > .center > .links {float:left;height:22px;margin-top:15px;float:left;}
+* > .footer.general > .center > .links > a {margin-left:20px;font-size:14px;font-weight:500;width:600px;color:#ccc;}
+* > .footer.general > .center > .copy {float:left;margin-top:10px;padding-left:20px;font-size:14px;width:600px;}
+
+@-webkit-keyframes rotation {
+	from {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg)
+	}
+
+	to {
+		-webkit-transform: rotate(359deg);
+		transform: rotate(359deg)
+	}
+}
+
+@-moz-keyframes rotation {
+	from {
+		-moz-transform: rotate(0deg);
+		transform: rotate(0deg)
+	}
+
+	to {
+		-moz-transform: rotate(359deg);
+		transform: rotate(359deg)
+	}
+}
+
+@-o-keyframes rotation {
+	from {
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg)
+	}
+
+	to {
+		-o-transform: rotate(359deg);
+		transform: rotate(359deg)
+	}
+}
+
+@keyframes rotation {
+	from {
+		transform: rotate(0deg)
+	}
+
+	to {
+		transform: rotate(359deg)
+	}
+}

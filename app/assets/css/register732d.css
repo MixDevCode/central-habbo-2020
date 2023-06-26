@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+body > .top {position:relative;z-index:5;overflow:hidden;background:#acbfce url('../img/header.png') no-repeat center bottom;height:210px;float:left;width:100%;}
+body > .top > .center {width:980px;margin:auto;position:relative;}
+body > .top > .center > .logo {height:128px;line-height:128px;}
+body > .top > .center > .logo:after {content:'';position:absolute;left:-97px;z-index:-1;top:-243px;width:600px;height:600px;background:url('../img/umbrella.png') no-repeat center center;-webkit-animation:spin 10s linear infinite;-moz-animation:spin 10s linear infinite;animation:spin 10s linear infinite;}
+body > .top > .center > .logo > img {vertical-align:middle;}
+
+body > .page {width:980px;margin:auto;position:relative;z-index:19;}
+body > .page > .left {float:left;overflow:hidden;margin-top:-82px;width:calc(100% - 380px - 15px);}
+body > .page > .right {float:right;overflow:hidden;margin-top:-195px;width:380px;}
+
+body > .page > .right > .registered {background:rgba(0,0,0,0.3);margin-bottom:15px;height:49px;line-height:49px;text-align:center;}
+
+body > .page > .left > .last {width:100%;background:#fff;float:left;}
+body > .page > .left > .last > h1 {color:#4e7ea6;padding:15px;font-size:18px;font-weight:600;line-height:18px;}
+body > .page > .left > .last > .content {position:relative;float:left;padding:0 0 0 15px;width:100%;background:url('../img/hotel_view.png') no-repeat bottom left;overflow:hidden;}
+body > .page > .left > .last > .content > a {margin-bottom:15px;overflow:hidden;text-align:center;float:left;width:calc(100%/5 - 15px);background:#acbfce;margin-right:15px;}
+body > .page > .left > .last > .content > a:nth-child(2n+0) {background:#999;}
+body > .page > .left > .last > .content > a > .mek {text-align:center;margin-left:-14.5px;height:130px;margin-top:-30px;margin-bottom:5px;overflow:hidden;}
+body > .page > .left > .last > .content > a > span {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;float:left;width:100%;margin-bottom:6px;font-size:13px;padding:0 13px;}
+body > .page > .left > .last > .content > a.invizibl > span {height:10px;background:rgba(0,0,0,0.1);width:60px;margin-left:22px;margin-bottom:10px;margin-top:6px;}
+body > .page > .left > .last > .content > a:nth-child(2n+1) > span {text-shadow:0 1px 3px rgba(0,0,0,0.3);}
+
+body > .page > .left > .why {width:100%;float:left;}
+body > .page > .left > .why > .bloc {width:calc(50% - 7.5px);padding:10px;height:150px;float:left;background:#fff url('../img/hotel_view.png') no-repeat bottom left;margin-top:15px;margin-right:15px;}
+body > .page > .left > .why > .bloc:nth-child(2n+0) {margin-right:0;}
+body > .page > .left > .why > .bloc > .img {float:left;margin:10px 20px 70px 10px;}
+body > .page > .left > .why > .bloc > .desc > h1 {color:#000;font-size:16px;font-weight:500;line-height:30px;}
+body > .page > .left > .why > .bloc > .desc > p {color:#666;font-size:14px;margin-top:10px;}
+
+body > .page > .right > form {background:url('../img/hotel_view.png') no-repeat bottom left #fff;width:100%;padding:30px 30px;float:left;}
+body > .page > .right > form > .title > h1 {color:#4e7ea6;padding-bottom:5px;font-size:18px;font-weight:600;line-height:18px;}
+body > .page > .right > form > .title > p {color:#666;font-size:14px;padding-bottom:15px;}
+body > .page > .right > form > .ipt {position:relative;float:left;width:100%;margin-bottom:10px;}
+body > .page > .right > form > .ipt > label {float:left;margin-top:10px;width:100%;clear:both;margin-bottom:5px;}
+body > .page > .right > form > .ipt > label > p {color:#999;font-size:12px;text-transform:uppercase;}
+body > .page > .right > form > .ipt > input {float:left;border:none;background:#eee;padding:0 15px;height:40px;line-height:40px;width:100%;color:#3e3e3e;}
+body > .page > .right > form > .ipt > .puissance > .line.PDMDP {overflow:hidden;float:left;height:30px;overflow:hidden;width:100%;margin-top:10px;}
+body > .page > .right > form > .ipt > .puissance > .line.PDMDP > .level {width:calc(100%/3);float:left;height:30px;border-right:1px solid #f9f9f9;font-size:11px;font-weight:100;line-height:30px;padding:0 10px;}
+body > .page > .right > form > .ipt > .puissance > .line.PDMDP > .level:last-child {border:none;}
+body > .page > .right > form > .ipt > .puissance > .line.PDMDP > .level:not(.green) {color:#ccc;background:#fff;}
+body > .page > .right > form > .ipt > .puissance > .line.PDMDP > .level.green {color:#fff;background:#5ca64e;}
+body > .page > .right > form > .ipt > input[type="radio"] {cursor:pointer;float:left;-webkit-appearance:none;width:calc(50% - 5px);margin-right:10px;height:80px;border:none;background:#4e7ea6;text-align:center;}
+body > .page > .right > form > .ipt > input[type="radio"]:last-child {margin-right:0;background:#d254d4;}
+body > .page > .right > form > .ipt > input[type="radio"]:before {line-height:80px;width:100%;font-size:50px;color:#fff;font-family:"FontAwesome";}
+body > .page > .right > form > .ipt > input[type="radio"]:before {content:"\f182";} 
+body > .page > .right > form > .ipt > input[type="radio"][value="M"]:before {content:"\f183";}
+body > .page > .right > form > .ipt > input[type="radio"]:checked {box-shadow:0 0 20px rgba(0,0,0,0.4) inset;}
+body > .page > .right > form > .ipt > input[type="radio"]:checked:before {text-shadow:0 0 20px rgba(0,0,0,0.4);}
+body > .page > .right > form > input {text-align:center;float:left;border:none;font-size:13px;text-transform:uppercase;color:#fff;margin-top:10px;background:#5ca64e;cursor:pointer;height:40px;line-height:40px;width:100%;}
+body > .page > .right > form > a {text-align:center;float:left;border:none;font-size:13px;text-transform:uppercase;color:#fff;margin-top:10px;background:#3e3e3e;cursor:pointer;height:40px;line-height:40px;width:100%;}
+
+@-moz-keyframes spin {
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg)
+    }
+}
